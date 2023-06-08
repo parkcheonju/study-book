@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ES6 study</title>
+  </head>
+  <body>
+    <h1>Arrow function은 function을 대체하는 신문법이 아님</h1>
+    <div>
+      <h3>프로그래밍할 때 function 문법은 왜 사용하는지 알아보자)</h3>
+      <ul>
+        <li>1. 여러가지 기능을 하는 코드를 한 단어로 묶고 싶을 때 (그리고 나중에 재사용할 때)</li>
+        <li>2. 입출력기능을 만들 때</li>
+        <li>3. arrow function을 사용하면 함수 본연의 입출력기능을 직관적으로 잘 표현해 주기 때문에 사용.</li>
+        <li>4. 함수는 수학에서 온 개념으로 숫자를 넣으면 다른 숫자를 배출해주는 역할을 함</li>
+        <li>5. 학교에서 배웠던 예시를 들자면 ex ] f(x) = x + 2</li>
+        <li>6. 5번을 프로그래밍으로 보면? ex ] function plus(x){return x+2}</li>
+        <li>7. 6번을 Arrow function으로 한줄로 만들 수 있다 ex ] let plus = x => x+2;</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Arrow function 예시</h3>
+      <ul>
+        <li>1. forEach 콜백함수</li>
+        <li>2. 이벤트 리스너</li>
+      </ul>
+    </div>
+    <button id="btn">버튼</button>
+    <script>
+      /*------------------ 1 --------------------*/
+      let arr=[1,2,3,4];
+      arr.forEach(function(a){ // array 자료 갯수만큼 내부 코드 실행
+        console.log(a)
+      })
+      arr.forEach(a=>console.log(a)) // 축약 가능
+      document.getElementById("btn").addEventListener("click", (e)=>{
+        e.currentTarget; // this와 다름 (this2.html 참고)
+      })
+
+      /*------------------ 2 --------------------*/
+      let obj = {
+        func : ()=>{ // window
+          return this
+        }
+      }
+      obj.func();
+    </script>
+  </body>
+</html>
