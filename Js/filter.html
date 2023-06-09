@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>javascript filter</title>
+  </head>
+  <body>
+    <h1>filter의 사용 방법 예시와 이해</h1>
+    <ul>
+      <li>element 에는 현재 순회하는 배열의 인자값,</li>
+      <li>index에는 그 인자값의 인덱스</li>
+      <li>array에는 현재 배열이 로그창에 나오게됨</li>
+    </ul>
+    <script>
+      (function test() {
+        const testArray = [1, 2, 3, 4, 5];
+        const newArray = testArray.filter(function (element, index, array) {
+          console.log(element);
+          console.log(index);
+          console.log(array);
+        });
+      })();
+
+      (function test2() {
+        let testJson = [
+          { name: "이건", salary: 50000000 },
+          { name: "홍길동", salary: 1000000 },
+          { name: "임신구", salary: 3000000 },
+          { name: "이승룡", salary: 2000000 },
+        ];
+        testJson = JSON.stringify(testJson);
+        const newJson = JSON.parse(testJson).filter(function (element) {
+          console.log(element);
+          return element.name == "이건";
+        });
+        console.log("newObj");
+        console.log(newJson);
+      })();
+    </script>
+  </body>
+</html>
